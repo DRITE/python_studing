@@ -22,12 +22,8 @@ def _read_file_to_list(file_name):
 list_of_teams = _read_file_to_list('epl_list')
 l_teams = list_of_teams[:]
 teams = {}
-results = []
 for i in list_of_teams:
     teams[i] = []
-    results.append(teams[i])
-print(teams)
-print(results)
 
 
 def divide_into_pairs(team_list):
@@ -84,12 +80,9 @@ while len(l_teams) > 1:
         print("Final result:")
     l_teams = lets_play(gr1, gr2)
     print()
-    print("Enter \'ask_stat()\' for show statistic")
 
 
-
-def ask_stat():
-
+if __name__ == '__main__':
     print('Enter \'exit\' for exit')
     print("Enter team name")
 
@@ -102,7 +95,10 @@ def ask_stat():
             for key, value in teams.items():
                 if key == team_name:
                     while len(value) > 0:
-                        print("{} vs {} ({} : {})".format(key, value.pop(0), value.pop(0), value.pop(0)))
+                        print("{} vs {} ({} : {})".format(key,
+                                                          value.pop(0),
+                                                          value.pop(0),
+                                                          value.pop(0)))
 
 
 
